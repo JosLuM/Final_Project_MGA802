@@ -1,0 +1,71 @@
+.. Image Processing Documentation
+
+Welcome to Image Processing Documentation
+=========================================
+
+Introduction
+------------
+
+This documentation provides an overview and usage instructions for the code. It includes various classes and functions that can be utilized for different purposes. Below is an outline of the available modules and their functionalities.
+
+Modules
+-------
+
+1. muDIC.vlab: This module contains functions and classes related to muDIC (Microscopic Digital Image Correlation) analysis.
+2. matplotlib.pyplot: This module provides plotting functionalities using Matplotlib library.
+3. cv2: OpenCV library for computer vision tasks, including image processing and manipulation.
+4. numpy: Numpy library for numerical computations and array operations.
+5. imutils: A set of utility functions for image processing tasks.
+6. os: OS module for interacting with the operating system, including file and directory operations.
+
+Classes
+-------
+
+1. ImageMarkerPrinter: A class for creating marker images and printing images with markers.
+2. ImageCreator: A class for creating speckle images and applying transformations if needed.
+3. ImageRotator: A class for rotating images.
+4. ImageAligner: A class for aligning images based on feature matching.
+5. ImageComparer: A class for comparing images and calculating metrics such as MSE (Mean Squared Error) and residuals.
+
+Usage
+-----
+
+To use the functionalities provided by the code, you can import the desired modules and instantiate the required classes. Here's an example usage:
+
+1. Create an instance of the ImageCreator class:
+
+   image_creator = ImageCreator(image_shape)
+
+2. Generate a speckle image using the create_speckle_image method:
+
+   speckle_image = image_creator.create_speckle_image(dot_size=4, density=0.32, smoothness=2.0)
+
+3. Rotate an image using the ImageRotator class:
+
+   rotator = ImageRotator(image)
+   rotated_image = rotator.rotate(angle)
+
+4. Align two images using the ImageAligner class:
+
+   aligner = ImageAligner(image, rotated_image)
+   aligned_image = aligner.align_images()
+
+5. Compare images using the ImageComparer class:
+
+   mse_value = ImageComparer.mse(image, aligned_image)
+   residuals = ImageComparer.calculate_residuals(image, aligned_image)
+   regression = ImageComparer.calculate_least_squares_regression(residuals)
+
+Make sure to refer to the individual class documentation for detailed information on methods, parameters, and usage instructions.
+
+Examples
+--------
+
+For more detailed examples on how to use the code, please refer to the code samples provided in the source files.
+
+Conclusion
+----------
+
+This documentation serves as a guide to the functionalities and usage of the code. Feel free to explore the different modules, classes, and methods to accomplish your specific tasks. If you have any further questions or need assistance, please refer to the inline comments in the code or reach out to the project maintainers.
+
+Happy coding!
